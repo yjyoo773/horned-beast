@@ -18,8 +18,8 @@ class HornedBeast extends React.Component {
     console.log("Num of click ", this.state.numberOfFavs);
     return (
       <Card
-        style={{ width: "600px" }}
-        className="text-center mx-auto bg-dark text-white"
+        style={{ width: "14rem" }}
+        className="text-center bg-dark text-white"
         border="info"
       >
         <Card.Header>

@@ -1,13 +1,14 @@
 import React from "react";
 import HornedBeast from "./hornedbeast";
 import data from "./data.json";
-
+import CardGroup from 'react-bootstrap/CardGroup'
 class Main extends React.Component {
   render() {
     return (
       <div>
         {/* <ul> */}
-          {data.map((element,index) => (
+        <CardGroup >
+          {data.map((element, index) => (
             <div key={index}>
               <HornedBeast
                 title={element.title}
@@ -17,7 +18,8 @@ class Main extends React.Component {
               />
             </div>
           ))}
-        {/* </ul> */}
+          {/* </ul> */}
+        </CardGroup>
       </div>
     );
   }

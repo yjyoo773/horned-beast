@@ -8,8 +8,8 @@ import Container from "react-bootstrap/Container";
 function App() {
   return (
     <div className="App">
-      <Header />
-      <Container className="align-middle">
+      <Container fluid className="align-middle" >
+        <Header />
         <Main />
         <Footer />
       </Container>
