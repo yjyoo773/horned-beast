@@ -5,17 +5,21 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "Horned Beasts",
+      title: true,
     };
   }
 
   clickToChangeTitle = () => {
-    this.setState({ title: "Beast Horns" });
+    this.setState({ title: !this.state.title });
   };
 
   render() {
     console.log(this.state.title);
-    return <h1 onClick={this.clickToChangeTitle}>{this.state.title}</h1>;
+    return (
+      <h1 onClick={this.clickToChangeTitle}>
+        {this.state.title ? "Horned Beasts" : "Beasts with Horns"}
+      </h1>
+    );
   }
 }
 
