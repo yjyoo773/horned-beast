@@ -19,6 +19,7 @@ class Main extends React.Component {
                 image_url={element.image_url}
                 description={element.description}
                 keyword={element.keyword}
+                horns = {element.horns}
                 cardIsClicked={this.props.cardIsClicked}
               />
             </div>
