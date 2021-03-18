@@ -20,11 +20,12 @@ class HornedBeast extends React.Component {
   render() {
     console.log("Num of click ", this.state.numberOfFavs);
     return (
+      <div >
       <Card
-        style={{width: "14.35rem" }}
-        className="text-center mx-auto bg-light text-dark"
-        border="info"
-        onClick = {this.cardIsClicked}
+      style={{width: "14rem", margin:"auto"}}
+      className="text-center mx-auto bg-light text-dark"
+      border="info"
+      onClick = {this.cardIsClicked}
       >
         <Card.Header>
           <h2>{this.props.title}</h2>
@@ -36,11 +37,12 @@ class HornedBeast extends React.Component {
             alt={this.props.keyword}
             title={this.props.title}
             onClick={this.clickFav}
-          />
+            />
           <h3>❤️ {this.state.numberOfFavs}</h3>
           <p>{this.props.description}</p>
         </Card.Body>
       </Card>
+      </div>
     );
   }
 }
