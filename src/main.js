@@ -1,13 +1,21 @@
 import React from "react";
 import HornedBeast from "./hornedbeast";
-import CardGroup from "react-bootstrap/CardGroup";
+import CardDeck from "react-bootstrap/CardGroup";
 
 class Main extends React.Component {
   render() {
+    let data = this.props.data;
+    let numHorns = this.props.numHorns;
+    const filterHorns = data.filter((x) => {
+      if (numHorns == "All") return x;
+      return x.horns === Number(numHorns);
+    });
+    console.log("from main ", numHorns);
     return (
       <div>
-        <CardGroup>
-          {this.props.data.map((element, index) => (
+        <CardDeck>
+          {/* {data.map((element, index) => ( */}
+          {filterHorns.map((element, index) => (
             <div key={index}>
               <HornedBeast
                 index={index}
@@ -20,7 +28,7 @@ class Main extends React.Component {
               />
             </div>
           ))}
-        </CardGroup>
+        </CardDeck>
       </div>
     );
   }
