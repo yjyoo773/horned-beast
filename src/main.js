@@ -1,21 +1,30 @@
 import React from "react";
 import HornedBeast from "./hornedbeast";
-import data from "./data.json";
+import CardGroup from "react-bootstrap/CardGroup";
 
 class Main extends React.Component {
+  cardIsClicked = () => {
+    this.props.clickCard();
+  }
   render() {
+    const data = this.props.data;
     return (
       <div>
-        <ul>
-          {data.map((element) => (
-            <HornedBeast
-              title={element.title}
-              image_url={element.image_url}
-              description={element.description}
-              keyword={element.keyword}
-            />
+        <CardGroup>
+          {data.map((element, index) => (
+            <div key={index}>
+              <HornedBeast
+                index={index}
+                title={element.title}
+                image_url={element.image_url}
+                description={element.description}
+                keyword={element.keyword}
+                horns = {element.horns}
+                cardIsClicked={this.props.cardIsClicked}
+              />
+            </div>
           ))}
-        </ul>
+        </CardGroup>
       </div>
     );
   }
