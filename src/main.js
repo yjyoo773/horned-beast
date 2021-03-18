@@ -3,15 +3,11 @@ import HornedBeast from "./hornedbeast";
 import CardGroup from "react-bootstrap/CardGroup";
 
 class Main extends React.Component {
-  cardIsClicked = () => {
-    this.props.clickCard();
-  }
   render() {
-    const data = this.props.data;
     return (
       <div>
         <CardGroup>
-          {data.map((element, index) => (
+          {this.props.data.map((element, index) => (
             <div key={index}>
               <HornedBeast
                 index={index}
@@ -19,8 +15,8 @@ class Main extends React.Component {
                 image_url={element.image_url}
                 description={element.description}
                 keyword={element.keyword}
-                horns = {element.horns}
-                cardIsClicked={this.props.cardIsClicked}
+                horns={element.horns}
+                cardIsClicked={() => this.props.cardIsClicked(index)}
               />
             </div>
           ))}

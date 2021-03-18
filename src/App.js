@@ -21,12 +21,13 @@ class App extends React.Component {
   }
   cardIsClicked = (index) => {
     this.setState({ clickedCard: this.state.data[index], showModal: true });
+
   };
   handleClose = () => {
     this.setState({ showModal: false });
   };
   render() {
-    console.log(this.state.showModal);
+    console.log(this.state.clickedCard);
     return (
       <div className="App">
         <Container className="align-middle">
