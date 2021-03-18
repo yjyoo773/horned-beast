@@ -1,5 +1,6 @@
 import React from "react";
 import Modal from "react-bootstrap/Modal";
+import Card from "react-bootstrap/Card";
 
 class SelectedBeast extends React.Component {
   render() {
@@ -18,13 +19,22 @@ class SelectedBeast extends React.Component {
           </Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <img
+          <Card className="text-center mx-auto ">
+            <Card.Img
+              variant="bottom"
+              src={this.props.clickedCard.image_url}
+              alt={this.props.clickedCard.keyword}
+              title={this.props.clickedCard.title}
+            />
+          </Card>
+          {/* <img
             src={this.props.clickedCard.image_url}
             alt={this.props.clickedCard.keyword}
             title={this.props.clickedCard.title}
             width={230}
           />
           <p>{this.props.clickedCard.description}</p>
+        </Modal.Body> */}
         </Modal.Body>
       </Modal>
     );
