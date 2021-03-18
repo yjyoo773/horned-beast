@@ -12,26 +12,31 @@ class HornedBeast extends React.Component {
 
   clickFav = () => {
     this.setState({ numberOfFavs: this.state.numberOfFavs + 1 });
+    // this.props.showModal(this.props.index)
+  };
+  modal = () => {
+    this.props.cardIsClicked(this.props.index);
   };
 
   render() {
     console.log("Num of click ", this.state.numberOfFavs);
     return (
       <Card
-        style={{ width: "14rem" }}
-        className="text-center bg-dark text-white"
+        style={{ width: "12rem" }}
+        className="text-center mx-auto bg-dark text-white"
         border="info"
+        onClick = {this.modal}
       >
-        <Card.Header>
+        <Card.Header onClick={this.clickFav}>
           <h2>{this.props.title}</h2>
         </Card.Header>
-        <Card.Body>
+        <Card.Body onClick={this.clickFav}>
           <Card.Img
             variant="bottom"
             src={this.props.image_url}
             alt={this.props.keyword}
             title={this.props.title}
-            onClick={this.clickFav}
+            
           />
           <h3>❤️ {this.state.numberOfFavs}</h3>
           <p>{this.props.description}</p>
