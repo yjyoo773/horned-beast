@@ -6,7 +6,6 @@ class SelectedBeast extends React.Component {
   render() {
     return (
       <Modal
-        // size="lg"
         width={230}
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -27,14 +26,7 @@ class SelectedBeast extends React.Component {
               title={this.props.clickedCard.title}
             />
           </Card>
-          {/* <img
-            src={this.props.clickedCard.image_url}
-            alt={this.props.clickedCard.keyword}
-            title={this.props.clickedCard.title}
-            width={230}
-          />
-          <p>{this.props.clickedCard.description}</p>
-        </Modal.Body> */}
+
         </Modal.Body>
       </Modal>
     );
