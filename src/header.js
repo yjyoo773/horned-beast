@@ -28,12 +28,12 @@ class Header extends React.Component {
   render() {
     return (
       <div>
-        <Navbar className="bg-light justify-content-between">
+        <Navbar className="justify-content-between" bg="light" variant="light">
           <Navbar.Brand href="#home">
             <h1>Gallery of Horns</h1>
           </Navbar.Brand>
           <Form inline onSubmit={this.handleSubmit}>
-            <Form.Label>
+            <Form.Label variant="dark">
               <h3>Horns </h3>
             </Form.Label>
             <Form.Control
@@ -48,7 +48,7 @@ class Header extends React.Component {
               <option>3</option>
               <option>100</option>
             </Form.Control>
-            <Button variant="light" type="submit">Submit</Button>
+            <Button variant="primary" type="submit">Submit</Button>
           </Form>
         </Navbar>
       </div>

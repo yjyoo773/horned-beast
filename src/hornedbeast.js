@@ -1,6 +1,7 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Card from "react-bootstrap/Card";
+import Col from 'react-bootstrap/Col';
 
 class HornedBeast extends React.Component {
   constructor(props) {
@@ -19,29 +20,33 @@ class HornedBeast extends React.Component {
 
   render() {
     console.log("Num of click ", this.state.numberOfFavs);
+    var cardStyle = {width:"15.7rem",margin:"20px", height: "22rem" }; // width 14rem
+    var cardImgStyle = { height: "12rem" };
     return (
-      <div >
-      <Card
-      style={{width: "14rem", margin:"auto"}}
-      className="text-center mx-auto bg-light text-dark"
-      border="info"
-      onClick = {this.cardIsClicked}
-      >
-        <Card.Header>
-          <h2>{this.props.title}</h2>
-        </Card.Header>
-        <Card.Body>
-          <Card.Img
-            variant="bottom"
-            src={this.props.image_url}
-            alt={this.props.keyword}
-            title={this.props.title}
-            onClick={this.clickFav}
-            />
-          <h3>❤️ {this.state.numberOfFavs}</h3>
-          <p>{this.props.description}</p>
-        </Card.Body>
-      </Card>
+      <div>
+        <Col  >
+        {/* <Col className="container-fluid" xs={3}  > */}
+
+          <Card
+            style={cardStyle}
+            className="text-center mx-auto bg-light text-dark"
+            border="info"
+            onClick={this.cardIsClicked}
+          >
+            <Card.Body>
+              <Card.Img
+                variant="bottom"
+                src={this.props.image_url}
+                alt={this.props.keyword}
+                title={this.props.title}
+                onClick={this.clickFav}
+                style={cardImgStyle}
+              />
+              <h3>❤️ {this.state.numberOfFavs}</h3>
+              <h4 style={{ margin: "auto" }}>{this.props.title}</h4>
+            </Card.Body>
+          </Card>
+        </Col>
       </div>
     );
   }
