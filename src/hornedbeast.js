@@ -15,6 +15,7 @@ class HornedBeast extends React.Component {
     this.setState({ numberOfFavs: this.state.numberOfFavs + 1 });
   };
   cardIsClicked = () => {
+    // this.props.cardIsClicked(this.props.title);
     this.props.cardIsClicked(this.props.index);
   };
 

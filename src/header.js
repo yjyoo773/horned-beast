@@ -4,13 +4,13 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      title: true,
-      // horns: "",
-    };
-  }
+  // constructor(props) {
+  //   super(props);
+  //   this.state = {
+  //     title: true,
+  //     // horns: "",
+  //   };
+  // }
 
   // clickToChangeTitle = () => {
   //   this.setState({ title: !this.state.title });
@@ -20,6 +20,7 @@ class Header extends React.Component {
     e.preventDefault();
     this.props.formForHorn(this.state.numHorns);
   };
+
   updateHorn = (e) => {
     // console.log("horn number is ", e.target.value);
     this.setState({ numHorns: e.target.value });

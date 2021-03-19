@@ -20,9 +20,13 @@ class App extends React.Component {
       numHorns: "All",
     };
   }
-  cardIsClicked = (index) => {
-    this.setState({ clickedCard: this.state.data[index], showModal: true });
+
+  cardIsClicked = (title) => {
+    const beastTitle = data.find(beast => beast.title === title)
+    this.setState({ clickedCard: beastTitle, showModal: true });
+    console.log("From cardIsClicked ", this.state.clickedCard)
   };
+
   formForHorn = (numHorns) => {
     this.setState({ numHorns });
   };
