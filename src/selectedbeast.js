@@ -25,6 +25,7 @@ class SelectedBeast extends React.Component {
               alt={this.props.clickedCard.keyword}
               title={this.props.clickedCard.title}
             />
+            <h4>{this.props.clickedCard.description}</h4>
           </Card>
 
         </Modal.Body>

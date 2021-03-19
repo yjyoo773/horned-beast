@@ -30,12 +30,14 @@ class App extends React.Component {
     this.setState({ showModal: false });
   };
   render() {
-    console.log("from App horn number is ", this.state.numHorns);
+    var footerStyle = {
+      padding : "2rem"
+    }
+    // console.log("from App horn number is ", this.state.numHorns);
     return (
       <div className="App">
         <Container className="align-middle">
           <Header
-            // numHorns={this.state.numHorns}
             formForHorn={this.formForHorn}
           />
           <Main
@@ -48,7 +50,7 @@ class App extends React.Component {
             handleClose={this.handleClose}
             clickedCard={this.state.clickedCard}
           />
-          <Footer />
+          <Footer style={footerStyle}/>
         </Container>
       </div>
     );
