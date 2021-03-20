@@ -4,13 +4,13 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 
 class Header extends React.Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     title: true,
-  //     // horns: "",
-  //   };
-  // }
+  constructor(props) {
+    super(props);
+    this.state = {
+      // renderToggle: true,
+      // horns: "",
+    };
+  }
 
   // clickToChangeTitle = () => {
   //   this.setState({ title: !this.state.title });
@@ -18,12 +18,15 @@ class Header extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.formForHorn(this.state.numHorns);
+    // this.setState({renderToggle: !this.state.renderToggle});
+    this.props.formForHorn(this.state.numHorns, this.state.renderToggle);
   };
-
+  // _onButtonClick = () => {
+  //   this.setState({ renderToggle: !this.state.renderToggle });
+  // };
   updateHorn = (e) => {
     // console.log("horn number is ", e.target.value);
-    this.setState({ numHorns: e.target.value });
+    this.setState({ numHorns: e.target.value ,renderToggle:!this.state.renderToggle});
   };
 
   render() {
@@ -49,7 +52,9 @@ class Header extends React.Component {
               <option>3</option>
               <option>100</option>
             </Form.Control>
-            <Button variant="primary" type="submit">Submit</Button>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
           </Form>
         </Navbar>
       </div>

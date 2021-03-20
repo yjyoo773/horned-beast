@@ -6,34 +6,41 @@ class Main extends React.Component {
 
   // Try to make work with componentDidMount
 
-  // constructor(props){
-  //   super(props);
-  //   this.state={
-  //     filterHorns : []
-  //   }
-  // }
+  constructor(props){
+    super(props);
+    this.state={
+      filterHorns : []
+    }
+  }
 
-  // componentDidMount = () =>{
-  //   let data = this.props.data;
-  //   let numHorns = this.props.numHorns;
-  //   const filterHorns = data.filter((x) => {
-  //     if (numHorns === "All") return x;
-  //     return x.horns === Number(numHorns);
-  //   });
-  //   this.setState({filterHorns});
-  // }
-  render() {
+  componentDidMount = () =>{
+    // console.log('componentDidMount() lifecycle')
     let data = this.props.data;
     let numHorns = this.props.numHorns;
     const filterHorns = data.filter((x) => {
       if (numHorns === "All") return x;
       return x.horns === Number(numHorns);
     });
+    this.setState({filterHorns});
+    // console.log('from main componentdidmount',this.state.filterHorns)
+  }
+  componentWillUnmount = () =>{
+    
+  }
+  render() {
+    // let data = this.props.data;
+    // let numHorns = this.props.numHorns;
+    // const filterHorns = data.filter((x) => {
+    //   if (numHorns === "All") return x;
+    //   return x.horns === Number(numHorns);
+    // });
 
-    console.log("from main ", numHorns);
+    // console.log("from main ", numHorns);
+    // console.log("from main ",this.state.filterHorns)
+    console.log('main render() lifecycle')
     return (
       <CardDeck >
-        {filterHorns.map((element, index) => (
+        {this.state.filterHorns.map((element, index) => (
           <div key={element.title}>
             <HornedBeast
               title={element.title}

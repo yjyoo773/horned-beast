@@ -20,7 +20,7 @@ class HornedBeast extends React.Component {
   };
 
   render() {
-    console.log("Num of click ", this.state.numberOfFavs);
+    // console.log("Num of click ", this.state.numberOfFavs);
     var cardStyle = {width:"15.7rem",margin:"20px", height: "22rem" }; // width 14rem
     var cardImgStyle = { height: "12rem" };
     return (
