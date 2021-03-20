@@ -7,7 +7,7 @@ class Header extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: true,
+      // renderToggle: true,
       // horns: "",
     };
   }
@@ -18,19 +18,23 @@ class Header extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.formForHorn(this.state.numHorns);
+    // this.setState({renderToggle: !this.state.renderToggle});
+    this.props.formForHorn(this.state.numHorns, this.state.renderToggle);
   };
+  // _onButtonClick = () => {
+  //   this.setState({ renderToggle: !this.state.renderToggle });
+  // };
   updateHorn = (e) => {
     // console.log("horn number is ", e.target.value);
-    this.setState({ numHorns: e.target.value });
+    this.setState({ numHorns: e.target.value ,renderToggle:!this.state.renderToggle});
   };
 
   render() {
     return (
       <div>
         <Navbar className="justify-content-between" bg="light" variant="light">
-          <Navbar.Brand href="#home">
-            <h1>Gallery of Horns</h1>
+          <Navbar.Brand href="#home" >
+            <h1 onClick = {() => window.location.reload()}>Gallery of Horns</h1>
           </Navbar.Brand>
           <Form inline onSubmit={this.handleSubmit}>
             <Form.Label variant="dark">
@@ -48,7 +52,9 @@ class Header extends React.Component {
               <option>3</option>
               <option>100</option>
             </Form.Control>
-            <Button variant="primary" type="submit">Submit</Button>
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
           </Form>
         </Navbar>
       </div>

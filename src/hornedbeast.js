@@ -15,11 +15,12 @@ class HornedBeast extends React.Component {
     this.setState({ numberOfFavs: this.state.numberOfFavs + 1 });
   };
   cardIsClicked = () => {
+    // this.props.cardIsClicked(this.props.title);
     this.props.cardIsClicked(this.props.index);
   };
 
   render() {
-    console.log("Num of click ", this.state.numberOfFavs);
+    // console.log("Num of click ", this.state.numberOfFavs);
     var cardStyle = {width:"15.7rem",margin:"20px", height: "22rem" }; // width 14rem
     var cardImgStyle = { height: "12rem" };
     return (
