@@ -37,7 +37,7 @@ class Main extends React.Component {
 
     // console.log("from main ", numHorns);
     // console.log("from main ",this.state.filterHorns)
-    console.log('main render() lifecycle')
+    // console.log('main render() lifecycle')
     return (
       <CardDeck >
         {this.state.filterHorns.map((element, index) => (

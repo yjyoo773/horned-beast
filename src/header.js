@@ -33,8 +33,8 @@ class Header extends React.Component {
     return (
       <div>
         <Navbar className="justify-content-between" bg="light" variant="light">
-          <Navbar.Brand href="#home">
-            <h1>Gallery of Horns</h1>
+          <Navbar.Brand href="#home" >
+            <h1 onClick = {() => window.location.reload()}>Gallery of Horns</h1>
           </Navbar.Brand>
           <Form inline onSubmit={this.handleSubmit}>
             <Form.Label variant="dark">
